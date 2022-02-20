@@ -5,13 +5,31 @@
   box-sizing: border-box;
 }
 
+@keyframes comingsoon {
+  0% {font-size: 15px ;
+  text-shadow: none;}
+  25% {font-size: 20px ;
+  text-shadow: 5px 5px 30px #16e0bd;}
+  50% {font-size: 15px ;
+    text-shadow: none}
+  75% {font-size: 20px;
+    text-shadow: 5px 5px 30px #16e0bd;}
+  100% {font-size: 15px;
+    text-shadow: none;}
+  
+}
  .coming-soon{
-  font-size: 20px;
-  transition: font-size .8s;
+  /* font-size: 20px;
+  transition: font-size .8s; */
+  color: var(--clr-accent);
+  animation-name: comingsoon;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out ;
 }
 
 .coming-soon:hover{
-  font-size: 30px;
+  /* font-size: 30px; */
   cursor: pointer;
 }
 
@@ -161,7 +179,7 @@ header {
   }
   
   #horizontal-line{
-    width: 100%;
+    display: none;
   }
 
   .nav-toggle{
@@ -185,7 +203,14 @@ header {
     /* width: 115px;
     transition: width 1s, height 1s; */
     padding-left: 1em;
-    font-weight: bolder;
+    font-weight: lighter;
+  }
+
+  .nav-list .nav-item:not(:first-child){
+    border-left: 1px solid var(--clr-light);
+  }
+  .nav-list .nav-item:not(:last-child){
+    padding-right: 15px;
   }
 
   .nav-link:hover{
@@ -199,7 +224,7 @@ header {
 @media (max-width: 768px)
   {
     #horizontal-line{
-      display: none;
+     width: 80%;
     }
 
     .nav {
@@ -463,8 +488,41 @@ header {
   text-align: center;    
 }
 
-/* footer */
 
+/* resume viewer */
+.resume-view{
+  text-align: center;
+}
+
+.btn-container{
+  padding-top: 2em;
+}
+
+.resume-btn{
+  display: inline-block;
+  padding: .5em 1.5em;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transfrom 200ms ease-in-out;
+}
+
+.resume-btn:hover {
+  transform: scale(1.1);
+}
+
+.resume-link{
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+
+/* footer */
 .connection{
   font-size: .6em;
   text-transform: uppercase;
