@@ -239,6 +239,7 @@ header {
       
       transform: translateX(100%);
       transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+      opacity: 0.96;
     }
 
     .nav-list {
@@ -369,6 +370,16 @@ header {
         left: -1.5em;
         width: calc(100% + 1.5em);
     }
+
+    .services-heading:after{
+      content: '';
+      display: block;
+      width: 4em;
+      height: 1px;
+      margin: 0.5em auto 1em;
+      background: var(--clr-light);
+      opacity: 0.25;
+    }
   }
 
   /* My Services section */
@@ -410,13 +421,16 @@ header {
 @media (min-width: 800px) {
     .services {
         display: flex;
-        max-width: 80%;
+        max-width: 90vw;
         margin-left: auto;
         margin-right: auto;
     }
     
-    .service + .service {
-        margin-left: 2em;
+    .service{
+      flex-grow: 1;
+      flex-basis: 0;
+      max-width: 100%;
+      padding: 0 10px;
     }
 }
 
@@ -454,7 +468,7 @@ header {
       grid-template-areas: 
           "title img"
           "subtitle img"
-          "text1 img";
+          "text img";
       grid-column-gap: 2em;
   }
   
@@ -477,7 +491,7 @@ header {
     /*    padding-right: calc(200px + 4em); */
   }
   .about-me-body{
-    grid-area: text1;
+    grid-area: text;
   }
 }
 
