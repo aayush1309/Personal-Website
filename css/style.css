@@ -421,17 +421,15 @@ header {
 @media (min-width: 800px) {
     .services {
         display: flex;
-        max-width: 90vw;
+        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
-    
-    .service{
-      flex-grow: 1;
-      flex-basis: 0;
-      max-width: 100%;
-      padding: 0 10px;
+     
+    .service + .service{
+      margin-left: 2em;
     }
+
 }
 
 @media (max-width: 599px){
